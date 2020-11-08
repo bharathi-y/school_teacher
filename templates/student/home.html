@@ -1,0 +1,69 @@
+{% extends 'student/base.html'%}
+
+{% block content %}
+
+    {{user.username}}
+
+    <form action="{% url 'logout'%}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Logout" class="btn btn-info">
+
+    </form>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'create' %}"><button type="button" class="btn btn-dark">Add Student<span class="sr-only">(current)</span></button></a>
+
+        </div>
+<div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'sendmail' %}"><button type="button" class="btn btn-dark">Send Mail<span class="sr-only">(current)</span></button></a>
+
+        </div>
+
+
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <h3 class="text-center text-heading"> Students </h3>
+    </div>
+    <div class="alert aiert-info ">Students</div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col" style="text-align:center">Student Name</th>
+            <th scope="col" style="text-align:center">Email ID </th>
+            <th scope="col" style="text-align:center" >Class</th>
+            <th scope="col" style="text-align:center">Section</th>
+            <th scope="col" style="text-align:center">Roll Number</th>
+            <th scope="col" style="text-align:center">Maths</th>
+            <th scope="col" style="text-align:center">English</th>
+            <th scope="col" style="text-align:center">Socila</th>
+            <th scope="col" style="text-align:center">EVS</th>
+            <th scope="col" style="text-align:center">Hindi</th>
+            <th scope="col" style="text-align:center">Exam Date</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+        <tr class="stock-list">
+            <td style="text-align:center" >{{student.student_name}} </td>
+            <td style="text-align:center" >{{student.student_email}} </td>
+            <td  style="text-align:center" >{{student.class_number}}</td>
+            <td  style="text-align:center">{{student.section}}</td>
+            <td  style="text-align:center">{{student.roll_number}}</td>
+            <td style="text-align:center">{{student.maths}}</td>
+            <td style="text-align:center">{{student.english}}</td>
+            <td style="text-align:center">{{student.social}}</td>
+            <td style="text-align:center">{{student.evs}}</td>
+            <td style="text-align:center">{{student.hindi}}</td>
+            <td style="text-align:center">{{student.exam_date}}</td>
+
+
+        </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+
+</div>
+
+{%endblock%}

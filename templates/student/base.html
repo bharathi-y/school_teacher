@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{% block title %}School-Teacher{% endblock title %}</title>
+
+    <link href="https://bootswatch.com/4/flatly/bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+
+
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+        </div>
+    </div>
+</nav>
+
+
+{% block content %}
+{% endblock %}
+<!--<div class="loader">-->
+<!--  <img class="loading-image" src="/media/images/spinner.gif" alt="loading.." width="150">-->
+<!--</div>-->
+<!--<script src="{% static 'js/index.js' %}"></script>-->
+{% block scripts %}
+{% endblock %}
+</body>
+</html>
